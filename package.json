@@ -1,0 +1,24 @@
+{
+  "name": "th-prework-api",
+  "version": "1.0.0",
+  "description": "API for a sample online learning platform.",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KunalGhosh02/th-prework-api.git"
+  },
+  "author": "Kunal Ghosh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KunalGhosh02/th-prework-api/issues"
+  },
+  "homepage": "https://github.com/KunalGhosh02/th-prework-api#readme",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
