@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import { v1Router } from './routes/v1';
 import { handleError } from './middlewares/error-handler';
+import { StatusCodes } from 'http-status-codes';
 
 export const app = express();
 
@@ -22,3 +23,7 @@ app.use('/healthcheck', (_req, res) => {
 });
 
 app.use(handleError);
+
+app.all('*', (_req, res) => {
+  return res.sendStatus(StatusCodes.NOT_FOUND);
+});
