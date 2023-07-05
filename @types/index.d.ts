@@ -9,7 +9,16 @@ declare global {
     role: USER_ROLES;
   }
 
-  namespace Student {}
+  namespace Student {
+    export interface ICourseListQuery {
+      page?: string;
+      limit?: string;
+    }
+
+    export interface IEnrollRequest {
+      course_id: string;
+    }
+  }
 
   namespace Teacher {
     export interface ICourseCreateRequest extends THCourse {}

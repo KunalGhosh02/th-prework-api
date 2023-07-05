@@ -34,11 +34,11 @@ export const createCourseController = async (
         statusCode: StatusCodes.INTERNAL_SERVER_ERROR,
       });
     }
-    res.status(StatusCodes.CREATED).json({
+    return res.status(StatusCodes.CREATED).json({
       message: 'Course created successfully',
       data: {
-        courseName: newCourse.name,
-        courseId: newCourse.id,
+        course_name: newCourse.name,
+        course_id: newCourse.id,
       },
     });
   } catch (error) {

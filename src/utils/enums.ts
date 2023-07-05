@@ -7,6 +7,7 @@ export const enum COLLECTIONS {
   STUDENTS = 'students',
   TEACHERS = 'teachers',
   COURSES = 'courses',
+  ENROLLMENTS = 'enrollments',
 }
 
 export const enum LOG_LEVEL {

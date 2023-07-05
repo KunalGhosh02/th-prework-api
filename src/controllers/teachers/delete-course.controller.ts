@@ -36,7 +36,7 @@ export const deleteCourseController = async (
         statusCode: StatusCodes.INTERNAL_SERVER_ERROR,
       });
     }
-    res.status(StatusCodes.OK).json({
+    return res.status(StatusCodes.OK).json({
       message: 'Course deleted successfully',
     });
   } catch (error) {
