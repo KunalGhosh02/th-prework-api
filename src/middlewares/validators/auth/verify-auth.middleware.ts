@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
-import { verifyToken } from '../../utils/helpers/jwt.helper';
-import { CustomError } from '../../utils/helpers/error.helper';
+import { verifyToken } from '../../../utils/helpers/jwt.helper';
+import { CustomError } from '../../../utils/helpers/error.helper';
 import { StatusCodes } from 'http-status-codes';
-import { USER_ROLES } from '../../utils/enums';
+import { USER_ROLES } from '../../../utils/enums';
 
 export const verifyAuth = (role?: USER_ROLES) => (req: Request, _: Response, next: NextFunction) => {
   try {

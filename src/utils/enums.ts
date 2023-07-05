@@ -6,6 +6,7 @@ export enum USER_ROLES {
 export const enum COLLECTIONS {
   STUDENTS = 'students',
   TEACHERS = 'teachers',
+  COURSES = 'courses',
 }
 
 export const enum LOG_LEVEL {

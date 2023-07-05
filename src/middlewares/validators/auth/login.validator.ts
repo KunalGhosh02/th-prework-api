@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import Joi from 'joi';
-import { USER_ROLES } from '../../utils/enums';
-import { joiValidation } from '../../utils/helpers/joi.helper';
+import { USER_ROLES } from '../../../utils/enums';
+import { joiValidation } from '../../../utils/helpers/joi.helper';
 
 export const validateLoginRequest = (
   req: Request,

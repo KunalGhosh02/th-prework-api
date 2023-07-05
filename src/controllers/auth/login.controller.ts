@@ -33,6 +33,7 @@ export const loginController = async (
           });
         }
         token = generateToken({
+          id: existingStudent._id,
           name: existingStudent.name,
           email: existingStudent.email,
           role: existingStudent.role,
@@ -54,6 +55,7 @@ export const loginController = async (
           });
         }
         token = generateToken({
+          id: existingTeacher._id,
           name: existingTeacher.name,
           email: existingTeacher.email,
           role: existingTeacher.role,

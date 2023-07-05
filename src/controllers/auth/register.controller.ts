@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { USER_ROLES } from '../../utils/enums';
-import { THStudent, THTeacher, THUser } from '../../../@types/models/user';
+import { THStudent, THTeacher } from '../../../@types/models/user';
 import { StudentModel } from '../../models/Student';
 import { CustomError } from '../../utils/helpers/error.helper';
 import { StatusCodes } from 'http-status-codes';
@@ -41,6 +41,7 @@ export const registerController = async (
           });
         }
          token = generateToken({
+          id: newStudent._id,
           name: newStudent.name,
           email: newStudent.email,
           role: newStudent.role,
@@ -69,6 +70,7 @@ export const registerController = async (
           });
         }
         token = generateToken({
+          id: newTeacher._id,
           name: newTeacher.name,
           email: newTeacher.email,
           role: newTeacher.role,

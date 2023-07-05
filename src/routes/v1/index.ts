@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { userRouter } from './user.routes';
-import { verifyAuth } from '../../middlewares/auth/verify-auth.middleware';
+import { authRouter } from './auth.routes';
+import { teacherRouter } from './teacher.routes';
 
 export const v1Router = Router();
 
-v1Router.use('/users', userRouter);
-v1Router.use(verifyAuth());
+v1Router.use('/auth', authRouter);
+v1Router.use('/teacher', teacherRouter);
