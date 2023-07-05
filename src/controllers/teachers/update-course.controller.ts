@@ -5,6 +5,7 @@ import { CourseModel } from '../../models/Course';
 import { CustomError } from '../../utils/helpers/error.helper';
 import { writeLog } from '../../utils/helpers/log.helper';
 import { LOG_LEVEL } from '../../utils/enums';
+import { randomUUID } from 'crypto';
 
 export const updateCourseController = async (
   req: Request<any, any, Teacher.ICourseUpdateRequest>,
@@ -43,7 +44,16 @@ export const updateCourseController = async (
     if (add_chapter) {
       updatePayload = {
         filter: { _id: id },
-        update: { $push: { chapters: chapter_payload } },
+        update: {
+          $push: {
+            chapters: {
+              ...chapter_payload,
+              id: randomUUID({
+                disableEntropyCache: true,
+              }),
+            },
+          },
+        },
       };
     } else {
       switch (field_to_update) {

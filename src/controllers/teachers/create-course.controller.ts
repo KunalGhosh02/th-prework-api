@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { CourseModel } from '../../models/Course';
 import { StatusCodes } from 'http-status-codes';
 import { CustomError } from '../../utils/helpers/error.helper';
+import { randomUUID } from 'crypto';
 
 export const createCourseController = async (
   req: Request<any, any, Teacher.ICourseCreateRequest>,
@@ -25,7 +26,12 @@ export const createCourseController = async (
     const newCourse = await CourseModel.create({
       name,
       description,
-      chapters,
+      chapters: chapters.map(e => ({
+        ...e,
+        id: randomUUID({
+          disableEntropyCache: true,
+        }),
+      })),
       teacher: req.user!.id,
     });
     if (!newCourse) {

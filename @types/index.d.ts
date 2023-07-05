@@ -52,5 +52,17 @@ declare global {
       chapter_field?: keyof Pick<IChapter, 'name' | 'contentLink'>;
       chapter_payload?: Pick<IChapter, 'name' | 'contentLink'>;
     }
+
+    export interface INotificationCreateRequest {
+      notification: {
+        title: string;
+        content: string;
+      };
+      course_id: string;
+    }
+
+    export interface IMarkNotificationAsSeenRequest {
+      notification_ids: Array<string>;
+    }
   }
 }

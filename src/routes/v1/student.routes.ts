@@ -8,6 +8,11 @@ import { studentProgressController } from '../../controllers/students/progress.c
 import { studentQuizSubmissionController } from '../../controllers/students/quiz.controller';
 import { validateQuizSubmission } from '../../middlewares/validators/students/quiz.validator';
 import { validateProgressSubmission } from '../../middlewares/validators/students/progress.validator';
+import {
+  listNotifications,
+  markNotificationAsSeen,
+} from '../../controllers/students/notification.controller';
+import { validateMarkNotificationSeenRequest } from '../../middlewares/validators/students/notfication.validator';
 
 export const studentRouter = Router();
 
@@ -26,3 +31,9 @@ studentRouter
 studentRouter
   .route('/progress')
   .post(validateProgressSubmission, studentProgressController);
+
+studentRouter.route('/notification').get(listNotifications);
+
+studentRouter
+  .route('/notification/mark-seen')
+  .post(validateMarkNotificationSeenRequest, markNotificationAsSeen);

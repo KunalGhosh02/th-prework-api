@@ -9,7 +9,7 @@ interface ICourseDoc extends THCourse, Document {}
 
 const chapterSchema = new Schema<IChapter>({
   _id: false,
-  id: { type: String, default: randomUUID(), index: true, unique: true },
+  id: { type: String, required: true, index: true, unique: true },
   name: { type: String, required: true },
   contentLink: { type: String, required: true },
 });
