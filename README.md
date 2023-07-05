@@ -23,16 +23,22 @@ Make sure you have the following software installed on your machine before runni
 
 ## Installation
 
-1. Clone this repository to your local machine.
+Clone this repository to your local machine.
 
+(for http)
 ```bash
-git clone <repository_url>
+git clone https://github.com/KunalGhosh02/th-prework-api.git
+```
+
+(for ssh)
+```bash
+git clone git@github.com:KunalGhosh02/th-prework-api.git
 ```
 
 Navigate to the project directory.
 
 ```bash
-cd <project_directory>
+cd th-prework-api
 ```
 
 Install the required npm dependencies.
