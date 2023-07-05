@@ -21,6 +21,7 @@ export const getCourseForTeacherController = async (
         page: Number(page) || 1,
         limit: Number(limit) || 10,
         projection: {
+          _id: 0,
           id: '$_id',
           name: 1,
           description: 1,

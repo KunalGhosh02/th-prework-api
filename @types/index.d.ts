@@ -18,6 +18,17 @@ declare global {
     export interface IEnrollRequest {
       course_id: string;
     }
+
+    export interface IProgressUpdateBody {
+      course_id: string;
+      chapter_id: string;
+    }
+
+    export interface IQuizSubmitBody {
+      course_id: string;
+      chapter_id: string;
+      answers: number[];
+    }
   }
 
   namespace Teacher {

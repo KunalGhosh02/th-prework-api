@@ -1,7 +1,7 @@
 import { Schema, Document, model, PaginateModel } from 'mongoose';
 import paginate from 'mongoose-paginate-v2';
 
-import { COLLECTIONS, USER_ROLES } from '../utils/enums';
+import { COLLECTIONS } from '../utils/enums';
 import { THCourse, IChapter } from '../../@types/models/course';
 import { randomUUID } from 'crypto';
 

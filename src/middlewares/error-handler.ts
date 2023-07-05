@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import { CustomError } from '../utils/helpers/error.helper';
 import { writeLog } from '../utils/helpers/log.helper';
 import { LOG_LEVEL } from '../utils/enums';
+import { StatusCodes } from 'http-status-codes';
 
 export const handleError = (
   err: Error,
@@ -17,7 +18,7 @@ export const handleError = (
     });
   }
 
-  return res.status(500).json({
-    message: err.message,
+  return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+    message: "Internal server error",
   });
 };

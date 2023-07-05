@@ -17,9 +17,17 @@ export const getCourseForStudentsController = async (
         customLabels: {
           docs: 'courses',
         },
+        populate: {
+          path: 'teacher',
+          select: {
+            _id: 0,
+            name: '$name'
+          }
+        },
         page: Number(page) || 1,
         limit: Number(limit) || 10,
         projection: {
+          _id: 0,
           id: '$_id',
           name: 1,
           description: 1,
