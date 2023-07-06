@@ -58,7 +58,6 @@ npm install
 1. Access the .env file and modify the configuration variables based on your environment.
 
 ```
-Copy code
 MONGO_URI= <if you are running locally, use mongodb://0.0.0.0:27017, or your mongodb+srv Atlas connection string>
 MONGO_DB_NAME= <choose any desired database name>
 JWT_SECRET= <select a 64-character string with a minimum length of 256 bits>
@@ -98,4 +97,4 @@ Alternatively, you can use the watch script to automatically restart the server 
 npm run watch
 ```
 
-> **NOTE:**  You can not run the `index.js` locally as it uses `aws-serverless-express` and takes AWS event as input.
+> **NOTE:**  You can not run the `index.js` locally as it uses `serverless-express` and takes AWS event and execution context as input.
