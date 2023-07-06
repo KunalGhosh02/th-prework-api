@@ -4,7 +4,7 @@ The TH API serves as the backend for a sample education application designed for
 
 This is a Node.js API project that requires a minimum Node.js version of 14. It utilizes the MongoDB as a database.
 
-
+---
 To see all the available APIs, view documentation run this postman collection containing all the endpoints and sample request and response.
 
 [View Documentation](https://documenter.getpostman.com/view/10235565/2s93zFWJrk)
@@ -14,12 +14,16 @@ If you have postman account or have postman installed:
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/10235565-c8b2a8fc-f3a6-4d6f-9fd7-be0949b03de0?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D10235565-c8b2a8fc-f3a6-4d6f-9fd7-be0949b03de0%26entityType%3Dcollection%26workspaceId%3D342ac1ad-6f74-4eea-809c-f49f0eb9a8f5)
 
+---
+
 ## Prerequisites
 
 Make sure you have the following software installed on your machine before running the API:
 
 - Node.js (Version 14 or higher) [Install from here](https://nodejs.org/en/download)
 - MongoDB [Use Atlas](https://www.mongodb.com/atlas/database) or install MongoDB locally from [here](https://www.mongodb.com/docs/manual/administration/install-community/)
+
+---
 
 ## Installation
 
@@ -45,24 +49,35 @@ Install the required npm dependencies.
 ```bash
 npm install
 ```
+
+---
 ## Configuration
  
-Rename the .env.example file to .env.
+1. Make a duplicate of the .env.example file and rename it as .env.
 
-Open the .env file and update the configuration variables according to your environment.
+1. Access the .env file and modify the configuration variables based on your environment.
+
+```
+Copy code
+MONGO_URI= <if you are running locally, use mongodb://0.0.0.0:27017, or your mongodb+srv Atlas connection string>
+MONGO_DB_NAME= <choose any desired database name>
+JWT_SECRET= <select a 64-character string with a minimum length of 256 bits>
+PORT= <assign an available port on your machine, or leave it empty to default to port 3000>
+```
 
 Scripts
 The following scripts are available in the package.json file:
 
-`build`: Transpiles the TypeScript code to JavaScript using TypeScript Compiler (tsc).
+3. `build`: Transpiles the TypeScript code to JavaScript using TypeScript Compiler (tsc).
 
-`local`: Starts the API server locally by running the compiled index.local.js file.
+4. `local`: Starts the API server locally by running the compiled index.local.js file.
 
-`watch`: Starts the API server locally using nodemon for automatic restart on file changes.
+    `watch`: Starts the API server locally using nodemon for automatic restart on file changes.
+
+---
+## Running the API
 
 
-
-Running the API
 Build the project by running the following command:
 
 ```bash
